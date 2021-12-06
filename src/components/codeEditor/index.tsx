@@ -10,11 +10,11 @@ interface CodeEditorProps {
 const runCode = (code: string) => {
     const script = document.createElement('script');
     script.innerHTML = `
-      try {
-        ${code}
-      } catch(e) {
-        console.error(e)
-      }
+        try {
+            ${code}
+        } catch(e) {
+            console.error(e)
+        }
     `
     let runCodeContainer = document.getElementById('runCodeContainer')
     if (!runCodeContainer) {

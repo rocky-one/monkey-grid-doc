@@ -71,7 +71,7 @@ exports.createPages = async ({ graphql, actions }) => {
     let slug = item.relativePath.split('/').splice(0, 2).join('/')
     createPage({
       path: slug,
-      component: path.resolve(`./src/pages/document.tsx`),
+      component: path.resolve(`./src/pages/examples.tsx`),
       context: {
         slug: slug,
         source: item.source,

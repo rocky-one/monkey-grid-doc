@@ -1,22 +1,25 @@
 import React, { useRef } from 'react'
 import { graphql } from 'gatsby'
-import CodeEditor from '../components/CodeEditor'
+import Layout from '../components/layout'
+import CodeEditor from '../components/codeEditor'
 
-export default (props) => {
+interface ExamplesProps {
+    pageContext: any;
+}
+
+export default (props: ExamplesProps) => {
     const {
         pageContext
     } = props
-
     const codeEditorRef = useRef<any>(null);
 
     const onRunCode = () => {
         codeEditorRef.current.runCode()
     }
 
-    return <div>
-        <div onClick={onRunCode}>运行代码</div>
+    return <Layout>
         <CodeEditor ref={codeEditorRef} sourceCode={pageContext.source} />
-    </div>
+    </Layout>
 }
 
 export const query = graphql`
