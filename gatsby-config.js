@@ -11,6 +11,14 @@ module.exports = {
           en: 'Base Use',
         },
       },
+      {
+        slug: 'cell',
+        icon: 'star-single-line',
+        title: {
+          zh: '单元格设置',
+          en: 'Base Cell',
+        },
+      },
     ]
   },
   plugins: [
@@ -23,7 +31,19 @@ module.exports = {
     },
     `gatsby-transformer-remark`,
     {
-      resolve: 'gatsby-plugin-less'
+      resolve: 'gatsby-plugin-less',
+      options: {
+        javascriptEnabled: true,
+        lessOptions: {
+          javascriptEnabled: true,
+        },
+      },
     },
+    {
+      resolve: 'gatsby-plugin-antd',
+      options: {
+        style: true,
+      },
+    }
   ],
 };

@@ -28,7 +28,7 @@ const runCode = (code: string) => {
 const CodeEditor = React.forwardRef((props: CodeEditorProps, ref: any) => {
     const [sourceCode, setSocureCode] = useState('')
     const [compiledCode, setCompiledCode] = useState('')
-    const [codeError, setCodeError] = useState('')
+    const [codeError, setCodeError] = useState<any>('')
     const [codeQuery, updateCodeQuery] = useState<string>('')
     const [editRef, updateEditRef] = useState<any>()
     const editroRef = useRef<any>(null)
