@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { graphql } from 'gatsby'
 import { Button } from 'antd'
 import Layout from '../components/layout'
@@ -17,7 +17,11 @@ export default (props: ExamplesProps) => {
     const onRunCode = () => {
         codeEditorRef.current.runCode()
     }
-
+    const editorDidMount = () => {
+        onRunCode()
+    }
+    useEffect(() => {
+    }, [])
     return <Layout>
         <div
             style={{
@@ -34,7 +38,8 @@ export default (props: ExamplesProps) => {
                 <div
                     id="gridContainer"
                     style={{
-                        flex: 1
+                        flex: 1,
+                        position: 'relative'
                     }}
                 ></div>
                 <div 
@@ -63,7 +68,7 @@ export default (props: ExamplesProps) => {
                     padding: '16px 8px'
                 }}
             >
-                <CodeEditor ref={codeEditorRef} sourceCode={pageContext.source} />
+                <CodeEditor ref={codeEditorRef} sourceCode={pageContext.source} editorDidMount={editorDidMount} />
             </div>
         </div>
     </Layout>

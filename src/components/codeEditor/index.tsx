@@ -1,10 +1,10 @@
 import React, { useState, useRef, lazy, Suspense, useEffect, useImperativeHandle } from 'react'
 import { transform } from '@babel/standalone'
 const MonacoEditor = lazy(() => import('react-monaco-editor'))
-
 interface CodeEditorProps {
     sourceCode: any
     readOnly?: boolean
+    editorDidMount?: Function
 }
 
 const runCode = (code: string) => {
@@ -19,6 +19,7 @@ const runCode = (code: string) => {
     let runCodeContainer = document.getElementById('runCodeContainer')
     if (!runCodeContainer) {
         runCodeContainer = document.createElement('div')
+        runCodeContainer.id = 'runCodeContainer'
         document.body.appendChild(runCodeContainer)
     }
     runCodeContainer.innerHTML = ''
@@ -36,8 +37,8 @@ const CodeEditor = React.forwardRef((props: CodeEditorProps, ref: any) => {
     const onCompiledCode = () => {
         try {
             const { code } = transform(sourceCode, {
-                filename: 'relativePath',
-                presets: ['react', 'typescript', 'es2015', 'stage-3'],
+                filename: 'MonkeyGrid2',
+                presets: ['react', 'env', 'typescript', 'es2015', 'stage-3'],
                 plugins: ['transform-modules-umd'],
             });
             setCompiledCode(code)
@@ -108,6 +109,7 @@ const CodeEditor = React.forwardRef((props: CodeEditorProps, ref: any) => {
                         },
                     });
                     editroRef.current = editor.getModel();
+                    props.editorDidMount && props.editorDidMount()
                 }}
             />
         </Suspense>

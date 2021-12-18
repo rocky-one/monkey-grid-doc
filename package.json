@@ -15,6 +15,7 @@
     "clean": "gatsby clean"
   },
   "devDependencies": {
+    "@babel/plugin-transform-modules-umd": "^7.16.5",
     "@types/lodash-es": "^4.17.5",
     "@typescript-eslint/eslint-plugin": "^4.4.0",
     "@typescript-eslint/parser": "^4.4.0",
