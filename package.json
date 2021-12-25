@@ -1,0 +1,50 @@
+{
+  "name": "my-gatsby-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "My Gatsby Site",
+  "author": "rocky-one",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-umd": "^7.16.5",
+    "@types/lodash-es": "^4.17.5",
+    "@typescript-eslint/eslint-plugin": "^4.4.0",
+    "@typescript-eslint/parser": "^4.4.0",
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^24.1.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "gh-pages": "^3.1.0",
+    "husky": "^4.0.0",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^3.0.0"
+  },
+  "dependencies": {
+    "@babel/standalone": "^7.16.4",
+    "antd": "^4.17.3",
+    "gatsby": "^4.3.0",
+    "gatsby-plugin-antd": "^2.2.0",
+    "gatsby-plugin-less": "^6.3.0",
+    "gatsby-source-filesystem": "^4.3.0",
+    "gatsby-transformer-remark": "^5.3.0",
+    "lodash-es": "^4.17.21",
+    "monaco-editor": "^0.30.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-i18next": "^11.14.3",
+    "react-monaco-editor": "^0.46.0"
+  }
+}
