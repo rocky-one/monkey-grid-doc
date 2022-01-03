@@ -1,34 +1,29 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Layout from "../components/Layout"
+import { Button } from "antd"
 
 export default ({ data }) => {
-  console.log(data)
-  return (
-    <Layout>
-      <div>
-        <h1>
-          Amazing Pandas Eating Things
-        </h1>
-        <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.id}>
-            <Link
-              to={node.fields.slug}
-            >
-              <h3>
-                {node.frontmatter.title}{" "}
-                <span>
-                  — {node.frontmatter.date}
-                </span>
-              </h3>
-              <p>{node.excerpt}</p>
-            </Link>
-          </div>
-        ))}
-      </div>
-    </Layout>
-  )
+	return (
+		<div style={{
+			width: '100%',
+			height: '100%',
+			textAlign: 'center'
+		}}>
+			<h1 style={{marginTop: '100px'}}>
+				Monkey Grid
+			</h1>
+
+			<div style={{marginTop: '30px'}}>
+				<Link
+					to='/examples/mergeCell'
+				>
+					<Button type="primary">
+						开始使用
+					</Button>
+				</Link>
+			</div>
+		</div>
+	)
 }
 
 export const query = graphql`
