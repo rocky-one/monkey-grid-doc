@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { Button } from 'antd'
 import Layout from '../components/layout'
 import CodeEditor from '../components/codeEditor'
-
+import RightMenu from '../components/rightMenu'
 interface ExamplesProps {
     pageContext: any;
 }
@@ -51,7 +51,9 @@ export default (props: ExamplesProps) => {
                         height: '100%',
                         border: '1px solid #ccc'
                     }}
-                ></div>
+                >
+                    <RightMenu {...props} />
+                </div>
             </div>
             <div style={{
                 width: '100%',

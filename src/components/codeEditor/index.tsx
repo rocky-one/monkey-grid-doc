@@ -63,7 +63,7 @@ const CodeEditor = React.forwardRef((props: CodeEditorProps, ref: any) => {
         {
             runCode() {
                 onCompiledCode()
-            },
+            }
         }
     ))
 
