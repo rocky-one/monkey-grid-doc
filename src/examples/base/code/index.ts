@@ -35,4 +35,4 @@ const sheet = MG.addSheet({
 sheet.addTable("table1", 0, 0, data);
 
 // 绘制
-sheet.point();
+sheet.paint();

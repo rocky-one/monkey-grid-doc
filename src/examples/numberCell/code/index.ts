@@ -40,4 +40,4 @@ sheet.setCellType(1, 4, 'number')
 sheet.setFormatter(1, 4, '###.##')
 
 sheet.addTable('table1', 0, 0, data)
-sheet.point()
+sheet.paint()

@@ -46,4 +46,4 @@ sheet.setCellStyle(2, 2, {
 
 sheet.addTable('table1', 0, 0, data)
 
-sheet.point()
+sheet.paint()
