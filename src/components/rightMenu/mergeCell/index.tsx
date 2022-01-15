@@ -2,10 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { Button } from 'antd'
 import * as styles from './index.module.less'
 
-interface MergeCell {
-}
 
-export default (props: MergeCell) => {
+export default () => {
     
     const onMerge = () => {
         const sheet = window.__MonkeyGrid__Instance.getSheet()
@@ -24,12 +22,12 @@ export default (props: MergeCell) => {
     }
 
     return <div>
-        <p>
+        <h3>
             选择一个区域进行合并单元格和取消单元格
-        </p>
+        </h3>
         <div className={styles.btns}>
-            <Button onClick={onMerge}>合并单元格</Button>
-            <Button style={{marginLeft:'20px'}} onClick={onUnMerge}>取消合并</Button>
+            <Button type='primary' onClick={onMerge}>合并单元格</Button>
+            <Button type='primary' style={{marginLeft:'20px'}} onClick={onUnMerge}>取消合并</Button>
         </div>
     </div>
 }

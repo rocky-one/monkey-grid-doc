@@ -35,7 +35,7 @@ export default (props: ExamplesProps) => {
                 width: '100%',
                 height: '530px',
                 display: 'flex',
-                border: '1px solid #ccc'
+                borderBottom: '1px solid #ccc'
             }}>
                 <div
                     id="gridContainer"
@@ -49,10 +49,10 @@ export default (props: ExamplesProps) => {
                     style={{
                         width: '300px',
                         height: '100%',
-                        border: '1px solid #ccc'
+                        borderLeft: '1px solid #ccc'
                     }}
                 >
-                    <RightMenu {...props} />
+                    <RightMenu {...props} codeEditorRef={codeEditorRef} />
                 </div>
             </div>
             <div style={{

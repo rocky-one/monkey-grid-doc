@@ -35,9 +35,9 @@ const sheet = MG.addSheet({
 
 // 第二种方式
 // 调用sheet实例上设置单元格类型方法 setCellType(row: number, col: number, type: string)
-// 调用sheet实例上设置格式方法 setFormatter(row: number, col: number, format: string)
+// 调用sheet实例上设置格式方法 setCellFormatter(row: number, col: number, format: string)
 sheet.setCellType(1, 4, 'date')
-sheet.setFormatter(1, 4, 'YYYY-MM-DD')
+sheet.setCellFormatter(1, 4, 'YYYY-MM-DD')
 
 sheet.addTable('table1', 0, 0, data)
 sheet.paint()
