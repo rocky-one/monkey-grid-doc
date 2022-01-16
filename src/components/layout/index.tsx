@@ -3,7 +3,6 @@ import { Tabs } from 'antd'
 import Menu from '../menu'
 const { TabPane } = Tabs
 import * as styles from './index.module.less'
-
 const treeData = [
 	{
 		title: '基础使用',
@@ -37,17 +36,22 @@ const treeData = [
 	}
 ]
 
-const tabsData = [
-	{
-		title: 'API文档',
-		path: '/docs',
-		id: 1
-	},
-	{
-		title: '表格示例',
-		path: '/examples',
-		id: 2
-	}
+interface tabItem {
+	title: string;
+	path: string;
+	id: number;
+}
+const tabsData: any = [
+	// {
+	// 	title: 'API文档',
+	// 	path: '/docs',
+	// 	id: 1
+	// },
+	// {
+	// 	title: '表格示例',
+	// 	path: '/examples',
+	// 	id: 2
+	// }
 ]
 
 export default ({ children }: any) => {
@@ -55,7 +59,7 @@ export default ({ children }: any) => {
 
 	useEffect(() => {
 		let pathname = window.location.pathname
-        const selectedItem = tabsData.find(item => pathname.indexOf(item.path) > -1)
+        const selectedItem = tabsData.find((item: tabItem) => pathname.indexOf(item.path) > -1)
         if (selectedItem) {
             setActiveKey(selectedItem.id.toString())
         }
@@ -78,7 +82,7 @@ export default ({ children }: any) => {
 					onTabClick={onTabClick}
 				>
 					{
-						tabsData.map(item => <TabPane tab={item.title} key={item.id}></TabPane>)
+						tabsData.map((item: tabItem) => <TabPane tab={item.title} key={item.id}></TabPane>)
 					}
 				</Tabs>
 			</div>

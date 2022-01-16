@@ -67,7 +67,7 @@ const CodeEditor = React.forwardRef((props: CodeEditorProps, ref: any) => {
         }
     ))
 
-    return <div style={{ width: '100%', height: '300px' }}>
+    return <div style={{ width: '100%', height: '100%' }}>
         <Suspense fallback={<div>...</div>}>
             <MonacoEditor
                 language='javascript'

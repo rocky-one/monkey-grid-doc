@@ -22,7 +22,7 @@ data[1][4].format = 'YYYY-MM-DD'
 const MG = new MonkeyGrid({
     container: document.getElementById('gridContainer'),
     width: 700,
-    height: 490,
+    height: 390,
     order: true,
     headerOrder: true,
     

@@ -18,8 +18,6 @@ for (let i = 0; i < rowLen; i++) {
 // 创建实例
 const MG = new MonkeyGrid({
     container: document.getElementById("gridContainer"),
-    width: 700,
-    height: 490,
     order: true,
     headerOrder: true,
 });

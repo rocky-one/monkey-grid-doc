@@ -24,7 +24,7 @@ data[7][2].colspan = 3
 const MG = new MonkeyGrid({
     container: document.getElementById("gridContainer"),
     width: 700,
-    height: 490,
+    height: 390,
     order: true,
     headerOrder: true,
 });

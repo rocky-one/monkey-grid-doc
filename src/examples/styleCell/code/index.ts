@@ -25,7 +25,7 @@ data[1][1].style = {
 const MG = new MonkeyGrid({
     container: document.getElementById('gridContainer'),
     width: 700,
-    height: 490,
+    height: 390,
     order: true,
     headerOrder: true
 })
