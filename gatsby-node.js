@@ -53,7 +53,7 @@ exports.createPages = async ({ graphql, actions }) => {
     allFile
   } = result.data
   let allExamples = allFile.nodes
-    .filter((node) => /code\/(.*)\.[t|j]sx?$/.test(node.relativePath))
+    .filter((node) => /code\/(.*)\.[t|j]s?$/.test(node.relativePath))
     .map((item) => {
       return {
         ...item,
