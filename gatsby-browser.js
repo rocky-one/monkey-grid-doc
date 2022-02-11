@@ -1,5 +1,5 @@
 
 import './src/global.less';
-window.monkeyGrid = require('monkeyGrid/index.js');
+window.monkeyGrid = require('monkey-grid/index.js');
 
-window.monkeyGridStyle = require('monkeyGrid/style.css');
+window.monkeyGridStyle = require('monkey-grid/style.css');

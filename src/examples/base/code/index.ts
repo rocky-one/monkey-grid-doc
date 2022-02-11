@@ -1,5 +1,5 @@
-import MonkeyGrid from "monkeyGrid";
-import "monkeyGrid/style.css";
+import MonkeyGrid from "monkey-grid";
+import "monkey-grid/style.css";
 
 // 创建数据，MonkeyGrid接受一个二维数组的数据源
 let rowLen = 100;

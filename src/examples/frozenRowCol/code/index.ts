@@ -1,5 +1,5 @@
-import MonkeyGrid from 'monkeyGrid'
-import 'monkeyGrid/style.css'
+import MonkeyGrid from 'monkey-grid'
+import 'monkey-grid/style.css'
 
 let rowLen = 100
 let colLen = 10
