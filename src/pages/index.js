@@ -15,7 +15,7 @@ export default ({ data }) => {
 
 			<div style={{marginTop: '30px'}}>
 				<Link
-					to='/examples/mergeCell'
+					to='/examples/base'
 				>
 					<Button type="primary">
 						开始使用

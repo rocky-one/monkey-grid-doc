@@ -31,7 +31,7 @@ const MG = new MonkeyGrid({
 })
 
 const sheet = MG.addSheet({
-    name: 'sheet11',
+    name: 'sheet1',
     rowCount: rowLen + 20,
     colCount: colLen + 10
 })
