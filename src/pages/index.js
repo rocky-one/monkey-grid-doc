@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { Button } from "antd"
+import SEO from '../components/seo'
 
 export default ({ data }) => {
 	return (
@@ -9,6 +10,7 @@ export default ({ data }) => {
 			height: '100%',
 			textAlign: 'center'
 		}}>
+			<SEO />
 			<h1 style={{marginTop: '100px'}}>
 				Monkey Grid
 			</h1>

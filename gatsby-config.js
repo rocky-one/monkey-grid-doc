@@ -1,7 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: "Monkey Grid",
-    siteUrl: "https://www.yourdomain.tld",
+    titleTemplate: "Monkey Grid",
+    author: 'rocky-one',
+    siteUrl: "https://www.monkey-gird.com",
+    description: '一款web端高性能表格组件,excel,table,sheetTable,grid-table,grid,monkey-grid',
     examples: [
       {
         slug: 'base',
@@ -62,6 +65,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-less',
       options: {

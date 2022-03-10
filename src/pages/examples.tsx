@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
-// import { graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { Button } from 'antd'
 import Layout from '../components/layout'
+import SEO from '../components/seo'
 import CodeEditor from '../components/codeEditor'
 import RightMenu from '../components/rightMenu'
 import DragLine from '../components/dragLine'
@@ -52,6 +53,7 @@ export default (props: ExamplesProps) => {
         setLinePosition(data.y)
     }
     return <Layout>
+        <SEO />
         <div
             ref={containerRef}
             style={{
@@ -133,26 +135,29 @@ export default (props: ExamplesProps) => {
     </Layout>
 }
 
-// export const query = graphql`
-//     {
-//         allMarkdownRemark {
-//             edges {
-//                 node {
-//                     fields {
-//                         slug
-//                     }
-//                 }
-//             }
-//         }
-//         site {
-//             id
-//             siteMetadata {
-//                 title
-//                 examples {
-//                     slug
-//                     icon
-//                 }
-//             }
-//         }
-//     }
-// `
+export const query = graphql`
+    {
+        allMarkdownRemark {
+            edges {
+                node {
+                    fields {
+                        slug
+                    }
+                }
+            }
+        }
+        site {
+            id
+            siteMetadata {
+                title
+                titleTemplate,
+                siteUrl,
+                description,
+                examples {
+                    slug
+                    icon
+                }
+            }
+        }
+    }
+`

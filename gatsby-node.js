@@ -52,6 +52,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const {
     allFile
   } = result.data
+
   let allExamples = allFile.nodes
     .filter((node) => /code\/(.*)\.[t|j]s?$/.test(node.relativePath))
     .map((item) => {
@@ -69,6 +70,7 @@ exports.createPages = async ({ graphql, actions }) => {
   })
   allExamples.forEach((item) => {
     let slug = item.relativePath.split('/').splice(0, 2).join('/')
+    console.log(slug, 5)
     createPage({
       path: slug,
       component: path.resolve(`./src/pages/examples.tsx`),
