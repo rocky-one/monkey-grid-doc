@@ -1,16 +1,15 @@
 import React, { useEffect } from "react"
 import { Link, graphql } from 'gatsby'
-import MonkeyGrid from 'monkey-grid';
 import { Button } from 'antd'
 import SEO from '../components/seo'
 import 'monkey-grid/style.css';
+const MonkeyGrid = typeof window !== `undefined` ? require("monkey-grid") : null
 
-
-export default ({ data }) => {
+export default () => {
 	useEffect(() => {
 		let rowLen = 100;
 		let colLen = 10;
-		let data = [];
+		let data: any = [];
 		for (let i = 0; i < rowLen; i++) {
 			let row = [];
 			for (let j = 0; j < colLen; j++) {
@@ -27,7 +26,6 @@ export default ({ data }) => {
 						value: `${i},${j}`,
 					});
 				}
-				
 			}
 			data.push(row);
 		}
@@ -59,14 +57,12 @@ export default ({ data }) => {
 			backgroundColor: '#20B2AA',
 			color: '#fff'
 		}
-		// data[7][2].rowspan = 3
-		// data[7][2].colspan = 3
 
 		const MG = new MonkeyGrid({
 			container: document.getElementById("gridContainerHome"),
 			width: 800,
 			height: 500,
-		});
+		})
 
 		const sheet = MG.addSheet({
 			name: "sheet1",
@@ -74,13 +70,10 @@ export default ({ data }) => {
 			colCount: 20,
 			frozenRowCount: 1,
     		frozenColCount: 1
-		});
+		})
 
-		// 第二种方式
-		// 调用sheet实例方法, setMergeCells(row: number, col: number, rowCount: number, colCount: number)
-		// sheet.setMergeCells(12, 3, 2, 2);
+		sheet.addTable("table1", 0, 0, data)
 
-		sheet.addTable("table1", 0, 0, data);
 	}, [])
 	return (
 		<div style={{
