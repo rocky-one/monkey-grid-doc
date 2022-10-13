@@ -79,7 +79,7 @@ export default () => {
 			if (window.location.href.indexOf('yunshangsky') > -1) {
 				document.title = '云上星空AI相关技术分享'
 			}
-		}, 0)
+		}, 40)
 
 	}, [])
 	return (
