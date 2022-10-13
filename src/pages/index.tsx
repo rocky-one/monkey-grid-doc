@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import { Link, graphql } from 'gatsby'
 import { Button } from 'antd'
 import SEO from '../components/seo'
+import Footer from "../components/footer"
 import 'monkey-grid/style.css';
 const MonkeyGrid = typeof window !== `undefined` ? require("monkey-grid") : null
 
@@ -60,7 +61,7 @@ export default () => {
 
 		const MG = new MonkeyGrid({
 			container: document.getElementById("gridContainerHome"),
-			width: 800,
+			width: 1000,
 			height: 500,
 		})
 
@@ -74,6 +75,12 @@ export default () => {
 
 		sheet.addTable("table1", 0, 0, data)
 
+		setTimeout(() => {
+			if (window.location.href.indexOf('yunshangsky') > -1) {
+				document.title = '云上星空AI相关技术分享'
+			}
+		}, 0)
+
 	}, [])
 	return (
 		<div style={{
@@ -82,30 +89,37 @@ export default () => {
 			textAlign: 'center'
 		}}>
 			<SEO />
-			<h1 style={{marginTop: '100px'}}>
+			<h2 style={{marginTop: '10px'}}>
 				Monkey Grid
-			</h1>
-
-			<div style={{marginTop: '30px'}}>
-				<Link
-					to='/examples/base'
-				>
-					<Button type="primary">
-						开始使用
-					</Button>
-				</Link>
+			</h2>
+			<div style={{width: '1000px', margin: '0 auto', textAlign: 'left', padding: '10px 60px'}}>
+				<h2>功能特性</h2>
+				<p>1. 多维表头展示，支持多维度的行列表头。</p>
+				<p>2. 基于canvas绘制保证高性能渲染。</p>
+				<p>3. 交互丰富，单选、多选区域、冻结行列头、自定义单元格样式和格式等。</p>
 			</div>
+			
 			<div id="gridContainerHome"
 				style={{
-					width: '70%',
-					height: '60%',
+					width: '1000px',
+					height: '500px',
 					border: '1px splid #ccc',
-					margin: '40px auto',
+					margin: '30px auto',
 					display: 'flex',
 					justifyContent: 'center'
 				}}
-			>
-
+			></div>
+			<div style={{marginTop: '40px'}}>
+				<Link
+					to='/examples/base'
+				>
+					<Button type="primary" style={{width: '160px', height: '40px', fontSize: '16px'}}>
+						查看demo
+					</Button>
+				</Link>
+			</div>
+			<div style={{marginTop: '60px'}}>
+				<Footer></Footer>
 			</div>
 		</div>
 	)
