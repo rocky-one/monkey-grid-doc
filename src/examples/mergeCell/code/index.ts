@@ -15,16 +15,14 @@ for (let i = 0; i < rowLen; i++) {
 }
 // 第一种方式
 // 在数据中直接设置合并单元格属性 rowsapn和colspan
-data[5][2].rowspan = 1
-data[5][2].colspan = 4
+data[1][1].rowspan = 1
+data[1][1].colspan = 4
 
-data[7][2].rowspan = 3
-data[7][2].colspan = 3
+data[3][1].rowspan = 3
+data[3][1].colspan = 3
 
 const MG = new MonkeyGrid({
     container: document.getElementById("gridContainer"),
-    width: 700,
-    height: 390,
     order: true,
     headerOrder: true,
 });
@@ -37,8 +35,7 @@ const sheet = MG.addSheet({
 
 // 第二种方式
 // 调用sheet实例方法, setMergeCells(row: number, col: number, rowCount: number, colCount: number)
-sheet.setMergeCells(12, 3, 2, 2);
+sheet.setMergeCells(7, 2, 2, 2);
 
 sheet.addTable("table1", 0, 0, data);
 
-sheet.paint();

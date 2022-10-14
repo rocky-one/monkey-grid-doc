@@ -15,14 +15,24 @@ for(let i = 0;i<rowLen;i++){
 }
 // 第一种方式
 // 日期格式
-data[1][4].value = '2021/10/30'
-data[1][4].type = 'date'
-data[1][4].format = 'YYYY-MM-DD'
+data[1][0].value = '2021/09/10'
+data[1][0].type = 'date'
+data[1][0].format = 'YYYY/MM/DD'
+
+data[1][1].value = '2021/09/12'
+data[1][1].type = 'date'
+data[1][1].format = 'YYYY/MM/DD'
+
+data[1][2].value = '2021/10/30'
+data[1][2].type = 'date'
+data[1][2].format = 'YYYY-MM-DD'
+
+data[1][3].value = '2021/11/02'
+data[1][3].type = 'date'
+data[1][3].format = 'YYYY-MM-DD'
 
 const MG = new MonkeyGrid({
     container: document.getElementById('gridContainer'),
-    width: 700,
-    height: 390,
     order: true,
     headerOrder: true,
     
@@ -33,11 +43,13 @@ const sheet = MG.addSheet({
     colCount: colLen+10
 })
 
+
+
+sheet.addTable('table1', 0, 0, data)
+
 // 第二种方式
 // 调用sheet实例上设置单元格类型方法 setCellType(row: number, col: number, type: string)
 // 调用sheet实例上设置格式方法 setCellFormatter(row: number, col: number, format: string)
-sheet.setCellType(1, 4, 'date')
-sheet.setCellFormatter(1, 4, 'YYYY-MM-DD')
-
-sheet.addTable('table1', 0, 0, data)
-sheet.paint()
+sheet.setCellValue(3, 1, '2022/01/01')
+sheet.setCellType(3, 1, 'date')
+sheet.setCellFormatter(3, 1, 'YYYY-MM-DD')

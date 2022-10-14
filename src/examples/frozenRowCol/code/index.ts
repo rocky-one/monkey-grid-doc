@@ -16,8 +16,6 @@ for (let i = 0; i < rowLen; i++) {
 
 const MG = new MonkeyGrid({
     container: document.getElementById('gridContainer'),
-    width: 700,
-    height: 390,
     order: true,
     headerOrder: true
 })
@@ -32,5 +30,3 @@ const sheet = MG.addSheet({
 })
 
 sheet.addTable('table1', 0, 0, data)
-
-sheet.paint()

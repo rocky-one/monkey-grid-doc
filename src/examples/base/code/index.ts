@@ -32,5 +32,3 @@ const sheet = MG.addSheet({
 // 往sheet中添加一个表格
 sheet.addTable("table1", 0, 0, data);
 
-// 绘制
-sheet.paint();

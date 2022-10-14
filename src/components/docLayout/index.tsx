@@ -34,6 +34,11 @@ const treeData = [
 		title: '冻结行列',
 		path: `/examples/frozenRowCol`,
 		slug: 'frozenRowCol'
+	},
+	{
+		title: '多维表头',
+		path: `/examples/dimensions`,
+		slug: 'dimensions'
 	}
 ]
 

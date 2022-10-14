@@ -24,8 +24,6 @@ data[1][1].style = {
 
 const MG = new MonkeyGrid({
     container: document.getElementById('gridContainer'),
-    width: 700,
-    height: 390,
     order: true,
     headerOrder: true
 })
@@ -45,5 +43,3 @@ sheet.setCellStyle(2, 2, {
 })
 
 sheet.addTable('table1', 0, 0, data)
-
-sheet.paint()
